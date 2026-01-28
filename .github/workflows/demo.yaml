@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: depoyment
+metadata:
+  name: demo-deployment
+  namespace: deb
+  labels:
+    app: demo
+spec: 
+  replicas: 3
+    selector:
+      labels:
+        app: demo
+  template:
+    matchLabels:
+      labels:
+        app: demo
+    spec:
+      containers:
+      -  name: demo-container
+         images: demo:latest
+         ports:
+         -  cotianerPort: 80
+         resources:
+         
